@@ -1,0 +1,22 @@
+Package: easyrnoaa
+Type: Package
+Title: Easily get NOAA data for a specific site
+Version: 0.1.0
+Date: 2020-10-14
+Author: Benedek Pásztor <pasztorb@gmail.com>
+Maintainer: Benedek Pásztor <pasztorb@gmail.com>
+Description: RNOAA package is to get NOAA data easily. This package allows an easier interface with RNOAA. 
+License: AGPL-3
+Encoding: UTF-8
+LazyData: true
+Depends:
+  R (>= 2.15.0)
+Imports:
+  rnoaa,
+  countrycode,
+  tidyverse,
+  countrycode,
+  lubridate,
+  geosphere,
+  tidyr
+RoxygenNote: 7.1.1
