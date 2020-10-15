@@ -15,7 +15,7 @@ get_closest_stations_list <- function(geotags, date_start, date_end)
   closest_stations_df <<-  do.call(rbind.data.frame, closest_stations_list)
 
 
-  ghcnd_stations <<- rnoaa::ghcnd_stations(first_year = lubridate::year(date_start), last_year = lubridate::year(date_end))
+  ghcnd_stations <- rnoaa::ghcnd_stations(first_year = lubridate::year(date_start), last_year = lubridate::year(date_end))
 
   ghcnd_data <<- ghcnd_stations %>%
     filter(id %in% closest_stations_df$id) %>%
