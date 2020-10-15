@@ -1,6 +1,6 @@
-#####
 #' Getting geocodes based on openstreetmap public API
 #' @export
+
 nominatim_osm <- function(address = NULL)
 {
   if(suppressWarnings(is.null(address)))
