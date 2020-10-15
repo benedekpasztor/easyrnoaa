@@ -4,7 +4,14 @@
 \alias{add_data_to_df}
 \title{Add data to a dataframe when querying and preparing}
 \usage{
-add_data_to_df(out = NULL, out_i = NULL, i, date_start_i, date_end_i)
+add_data_to_df(
+  out = NULL,
+  out_i = NULL,
+  station_id_list,
+  i,
+  date_start_i,
+  date_end_i
+)
 }
 \description{
 Add data to a dataframe when querying and preparing

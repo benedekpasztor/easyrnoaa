@@ -28,7 +28,7 @@ ghcnd_data_query_for_stationidlist_between_dates <- function(station_id_list, da
                              d_end = date_end_i)
 
       print(paste("Preparation of data data for ", station_id_list[i], ", for period between ", date_start_i, " and ", date_end_i))
-      out <<- add_data_to_df(out, out_i, i, date_start_i, date_end_i)
+      out <<- add_data_to_df(out, out_i, station_id_list, i, date_start_i, date_end_i)
 
     }
 
