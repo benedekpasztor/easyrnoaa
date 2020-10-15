@@ -1,3 +1,6 @@
+#' Geocoding places in a dataframe
+#' @export
+
 get_geocode_for_places <- function(places_to_check){
   places <- data.frame(places_to_check)
   colnames(places) <- c('id')

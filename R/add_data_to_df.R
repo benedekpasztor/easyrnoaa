@@ -1,3 +1,6 @@
+#' Add data to a dataframe when querying and preparing
+#' @export
+#'
 add_data_to_df <- function(out = NULL, out_i = NULL, i, date_start_i, date_end_i){
   tryCatch({
     out_i <- out_i$data

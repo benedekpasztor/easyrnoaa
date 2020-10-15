@@ -1,3 +1,5 @@
+#' Next token
+#' @export
 
 next_token <- function(token_i){
   noaakey <<- noaakeys[token_i][[1]]
