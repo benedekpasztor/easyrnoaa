@@ -1,3 +1,14 @@
+#' Gets 10 closes station ids and takes the one with most of GHCND data.
+#' @param geotags data frame, date_start date in YYYY-MM-DD, date_end date in YYYY-MM-DD
+#' @return list
+#' @export
+#' @examples
+#' station_id_list: geotags with columns 'lat' and 'lon referring to latitude and longitude
+#' date_start <- '2000-01-01'
+#' date_end <- '2010-01-01'
+#' get_closest_stations_list(station_id_list, date_start, date_end)
+
+
 get_closest_stations_list <- function(geotags, date_start, date_end)
 {
   closest_stations_list <- rnoaa::meteo_nearby_stations(geotags,  station_data = rnoaa::ghcnd_stations(), lat_colname = 'lat', lon_colname = 'lon', year_min = lubridate::year(date_start), year_max = lubridate::year(date_end), limit = 10)

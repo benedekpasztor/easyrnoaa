@@ -1,12 +1,13 @@
-#' Formats Hungarian Forint
+#' Queries GHCND data for a selected station id_list, and between a start and end date
 #' @param station_id_list list, date_start date in YYYY-MM-DD, date_end date in YYYY-MM-DD
-#' @return string
+#' @return data frame
 #' @export
 #' @examples
 #' station_id_list <- c("HU000012942", "LOE00105562", "NOE00112089", "SP000003195")
 #' date_start <- '2000-01-01'
 #' date_end <- '2010-01-01'
 #' ghcnd_data_query_for_stationidlist_between_dates(station_id_list, date_start, date_end)
+
 
 ghcnd_data_query_for_stationidlist_between_dates <- function(station_id_list, date_start, date_end)
   {
