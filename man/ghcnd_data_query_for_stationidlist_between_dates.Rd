@@ -2,7 +2,7 @@
 % Please edit documentation in R/ghcnd_data_query.R
 \name{ghcnd_data_query_for_stationidlist_between_dates}
 \alias{ghcnd_data_query_for_stationidlist_between_dates}
-\title{Formats Hungarian Forint}
+\title{Queries GHCND data for a selected station id_list, and between a start and end date}
 \usage{
 ghcnd_data_query_for_stationidlist_between_dates(
   station_id_list,
@@ -14,10 +14,10 @@ ghcnd_data_query_for_stationidlist_between_dates(
 \item{station_id_list}{list, date_start date in YYYY-MM-DD, date_end date in YYYY-MM-DD}
 }
 \value{
-string
+data frame
 }
 \description{
-Formats Hungarian Forint
+Queries GHCND data for a selected station id_list, and between a start and end date
 }
 \examples{
 station_id_list <- c("HU000012942", "LOE00105562", "NOE00112089", "SP000003195")
