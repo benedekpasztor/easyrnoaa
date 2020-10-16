@@ -8,10 +8,21 @@
 #' date_end <- '2010-01-01'
 #' get_and_prepare_data(places_to_check, date_start, date_end)
 
-
 get_and_prepare_data <- function(places_to_check, date_start, date_end){
-  data <- get_geocode_for_places(places_to_check)
-  closest_stations_list <- get_closest_stations_list(data, date_start, date_end)
-  d <- ghcnd_data_query_for_stationidlist_between_dates(closest_stations_list, date_start, date_end)
+  geocode <- get_geocode_for_places(places_to_check)
+
+  ghcnd_data <- get_closest_stations_list(geocode, date_start, date_end)
+
+  d <- ghcnd_data_query_for_stationidlist_between_dates(ghcnd_data$id, date_start, date_end)
+
+  geocode['station_id'] <- ghcnd_data[apply(geocode, 1, get_place_for_stations), 'id']
+
+
+  d <- d %>%
+    mutate(station_id = substr(station, 7, length(station))) %>%
+    dplyr::left_join(geocode %>% select(c('id', 'station_id'))) %>%
+    plyr::rename(c("id" = "country"))
+
+
   return(d)
 }

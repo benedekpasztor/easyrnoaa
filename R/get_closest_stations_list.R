@@ -11,7 +11,14 @@
 
 get_closest_stations_list <- function(geotags, date_start, date_end)
 {
-  closest_stations_list <- rnoaa::meteo_nearby_stations(geotags,  station_data = rnoaa::ghcnd_stations(), lat_colname = 'lat', lon_colname = 'lon', year_min = lubridate::year(date_start), year_max = lubridate::year(date_end), limit = 10)
+  closest_stations_list <- rnoaa::meteo_nearby_stations(geotags,
+                                                        station_data = rnoaa::ghcnd_stations(),
+                                                        lat_colname = 'lat',
+                                                        lon_colname = 'lon',
+                                                        year_min = lubridate::year(date_start),
+                                                        year_max = lubridate::year(date_end),
+                                                        limit = 10)
+
   closest_stations_df <<-  do.call(rbind.data.frame, closest_stations_list)
 
 
@@ -27,7 +34,5 @@ get_closest_stations_list <- function(geotags, date_start, date_end)
     filter(row_number() == 1)
 
 
-  station_id_list <- ghcnd_data$id
-
-  return(station_id_list)
+  return(ghcnd_data)
 }
