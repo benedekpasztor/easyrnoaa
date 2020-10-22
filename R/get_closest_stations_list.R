@@ -33,6 +33,5 @@ get_closest_stations_list <- function(geotags, date_start, date_end)
     top_n(year_diff, n = 1) %>%
     filter(row_number() == 1)
 
-
   return(ghcnd_data)
 }

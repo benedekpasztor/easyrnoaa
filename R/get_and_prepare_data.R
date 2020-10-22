@@ -23,6 +23,5 @@ get_and_prepare_data <- function(places_to_check, date_start, date_end){
     dplyr::left_join(geocode %>% select(c('id', 'station_id'))) %>%
     plyr::rename(c("id" = "country"))
 
-
   return(d)
 }
